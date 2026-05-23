@@ -339,12 +339,12 @@ nav.scrolled{
 
 /* TOOL CARDS */
 .tool-card{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.65rem;
-  padding:1.1rem 1.5rem;min-width:120px;min-height:96px;
+  display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:.75rem;
+  padding:.85rem 1.4rem;min-width:160px;height:58px;
   background:rgba(255,255,255,0.04);
-  border-radius:14px;
+  border-radius:10px;
   border:1px solid rgba(255,255,255,0.1);
-  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease,background .25s ease;
+  transition:border-color .25s ease,box-shadow .25s ease,background .25s ease;
   cursor:none;
   backdrop-filter:blur(16px);
   -webkit-backdrop-filter:blur(16px);
@@ -352,6 +352,7 @@ nav.scrolled{
   box-shadow:
     0 1px 0 rgba(255,255,255,0.08) inset,
     0 4px 20px rgba(0,0,0,0.4);
+  flex-shrink:0;
 }
 /* top glass shine */
 .tool-card::before{
@@ -381,9 +382,9 @@ nav.scrolled{
     0 0 0 1px rgba(198,255,0,0.12);
 }
 .tool-card:hover::after{opacity:1}
-.tool-logo{width:34px;height:34px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1}
-.tool-logo svg{width:34px;height:34px}
-.tool-name{font-size:.56rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);white-space:nowrap;position:relative;z-index:1}
+.tool-logo{width:26px;height:26px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1}
+.tool-logo svg{width:26px;height:26px}
+.tool-name{font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(242,242,242,0.7);white-space:nowrap;position:relative;z-index:1}
 /* brand colors applied inline in SVGs */
 
 /* ─── SHARED ─── */
@@ -733,10 +734,10 @@ nav.scrolled{
 /* ─── FOOTER ─── */
 footer{
   border-top:1px solid rgba(255,255,255,0.07);
-  background:rgba(5,5,8,0.85);
+  background:rgba(5,5,8,0.95);
   backdrop-filter:blur(20px);
   -webkit-backdrop-filter:blur(20px);
-  padding:4rem 4rem 2rem;
+  padding:3rem 4rem 2rem;
   position:relative;
   z-index:2;
 }
@@ -744,7 +745,7 @@ footer::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
   background:linear-gradient(90deg,transparent,rgba(198,255,0,0.2),transparent);
 }
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3.5rem}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
 .footer-logo-col p{font-size:.8rem;color:var(--muted);font-weight:400;line-height:1.78;letter-spacing:.01em;max-width:240px;margin-top:.85rem;font-family:'Inter',sans-serif}
 .footer-col h4{font-family:'Bebas Neue';font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:1.1rem}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
@@ -1503,8 +1504,8 @@ footer::before{
 /* ─── FOOTER AMBIENT ─── */
 footer{
   background:
-    radial-gradient(ellipse 60% 80% at 50% 100%, rgba(198,255,0,0.12) 0%, transparent 60%),
-    rgba(5,5,8,0.92) !important;
+    radial-gradient(ellipse 50% 50% at 50% 100%, rgba(198,255,0,0.07) 0%, transparent 55%),
+    rgba(5,5,8,0.95) !important;
 }
 
 /* ─── ANIMATED FLOATING BLOBS ─── */
@@ -1556,10 +1557,10 @@ footer{
   </a>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
-    <li><a href="#results">Work</a></li>
-    <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#process">Process</a></li>
+    <li><a href="#results">Work</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-cta" onclick="window.open('https://calendly.com/shainamaemartin/30min','_blank')">Book a Call</button>
