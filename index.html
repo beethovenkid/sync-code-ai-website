@@ -4,6 +4,18 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Sync Code AI — Build Smarter. Scale Faster.</title>
+<meta name="description" content="Sync Code AI builds AI automation systems, workflow automations, dashboards, CRM setups, and websites that help businesses streamline operations, capture leads, and scale faster."/>
+<meta name="robots" content="index, follow"/>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Sync Code AI — Build Smarter. Scale Faster."/>
+<meta property="og:description" content="We build AI-powered systems, automation workflows, dashboards, and conversion-focused websites that help businesses streamline operations and scale with clarity."/>
+<meta property="og:url" content="https://synccodeai.com"/>
+<meta property="og:site_name" content="Sync Code AI"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Sync Code AI — Build Smarter. Scale Faster."/>
+<meta name="twitter:description" content="We build AI-powered systems, automation workflows, dashboards, and conversion-focused websites that help businesses streamline operations and scale with clarity."/>
 <link href="https://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
@@ -31,11 +43,13 @@
   --card-solid:#141410;
 }
 
-/* ─── PREMIUM CURSOR — NO BLEND MODE ─── */
-body{cursor:none}
-#dot{position:fixed;width:18px;height:18px;border-radius:50%;background:#C0DC2A;mix-blend-mode:difference;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s cubic-bezier(.25,.46,.45,.94),height .25s cubic-bezier(.25,.46,.45,.94);will-change:left,top}
-#ring{position:fixed;width:4px;height:4px;border-radius:50%;background:#C0DC2A;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);will-change:left,top}
-body.cur-hover #dot{width:28px;height:28px}
+/* ─── PREMIUM CURSOR — DESKTOP ONLY ─── */
+@media(pointer:fine){
+  body{cursor:none}
+  #dot{position:fixed;width:18px;height:18px;border-radius:50%;background:#C0DC2A;mix-blend-mode:difference;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s cubic-bezier(.25,.46,.45,.94),height .25s cubic-bezier(.25,.46,.45,.94);will-change:left,top}
+  #ring{position:fixed;width:4px;height:4px;border-radius:50%;background:#C0DC2A;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);will-change:left,top}
+  body.cur-hover #dot{width:28px;height:28px}
+}
 
 
 /* ─── STAGGERED REVEAL ─── */
@@ -53,10 +67,10 @@ body.cur-hover #dot{width:28px;height:28px}
 .stagger-item:nth-child(4){transition-delay:.54s}
 .stagger-item:nth-child(5){transition-delay:.72s}
 .stagger-item:nth-child(6){transition-delay:.90s}
-.stagger-item:nth-child(6){transition-delay:.75s}
 
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;font-size:16px;overflow-x:hidden;cursor:none}
+body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;font-size:16px;overflow-x:hidden}
+@media(pointer:coarse){body{cursor:auto}#dot,#ring{display:none}}
 ::-webkit-scrollbar{width:11px}
 ::-webkit-scrollbar-track{background:rgba(5,5,8,0.95);border-left:1px solid rgba(255,255,255,0.04)}
 ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#C0DC2A 0%,#CBE537 100%);border-radius:8px;border:2px solid rgba(5,5,8,0.95);box-shadow:0 0 6px rgba(192,220,42,0.045)}
@@ -2816,9 +2830,9 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   if(!canvas) return;
   const ctx = canvas.getContext('2d');
 
-  const LIME = '213,255,64';
-  const PARTICLE_COUNT = 88;
-  const MAX_DIST = 160;
+  const LIME = '192,220,42';
+  const PARTICLE_COUNT = 55;
+  const MAX_DIST = 130;
   const SPEED = 0.35;
 
   let W, H, particles = [], mouse = {x: -9999, y: -9999};
@@ -2842,7 +2856,7 @@ document.querySelectorAll('.faq-q').forEach(q=>{
       this.vx = (Math.random() - 0.5) * SPEED;
       this.vy = (Math.random() - 0.5) * SPEED;
       this.r  = Math.random() * 1.8 + 0.8;
-      this.baseAlpha = Math.random() * 0.35 + 0.18;
+      this.baseAlpha = Math.random() * 0.25 + 0.14;
       this.alpha = this.baseAlpha;
     }
     update(){
@@ -2886,7 +2900,7 @@ document.querySelectorAll('.faq-q').forEach(q=>{
         const dx = a.x - b.x, dy = a.y - b.y;
         const dist = Math.sqrt(dx*dx + dy*dy);
         if(dist < MAX_DIST){
-          const alpha = (1 - dist / MAX_DIST) * 0.22;
+          const alpha = (1 - dist / MAX_DIST) * 0.16;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
